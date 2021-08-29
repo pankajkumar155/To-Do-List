@@ -1,27 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
 
-const input = document.querySelector("#add");
-const  btn = document.querySelector("#btn");
-const list = document.querySelector("#list");
-var el = document.getElementsByTagName('li');
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="Assets/todos.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>To Do List</title>
+</head>
 
-// this function will allow us to add elements when we click the button
-btn.onclick = function(){
-    
-    var txt = input.value;
-    if(txt ==''){
-        alert('you must write something');
-    }else{
-        li = document.createElement('li');
-    li.innerHTML = txt;
-    list.insertBefore(li,list.childNodes[0]);
-    input.value = '';
-    }
-    
-};
+<body>
+    <div id="container">
+        <h1>To-Do List by 😎😎 PANKAJ<i class="fas fa-plus"></i></h1>
+        <input type="text" placeholder="Add New ToDo">
+        <ul>
+            <li> <span><i class="fas fa-trash"></i></span> Go to class</li>
+            <li> <span><i class="fas fa-trash"></i></span> Feed dog</li>
+            <li> <span><i class="fas fa-trash"></i></span> Study</li>
+        </ul>
+    </div>
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-//this function will allow us to check the clicked elements
-list.onclick = function(ev){
-    if(ev.target.tagName == 'LI'){
-         ev.target.classList.toggle('checked');
-    }
-};
+    <script type="text/javascript" src="Assets/todos.js"></script>
+</body>
+
+</html>
