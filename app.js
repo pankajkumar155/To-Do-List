@@ -1,31 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+$("ul").on("click", "li", function () {     
+    $(this).toggleClass("completed")
+});
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="Assets/todos.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <title>To Do List</title>
-</head>
+$("ul").on("click", "span" ,function(event){
+    $(this).parent().fadeOut(500,function(){
+        $(this).remove();
+    });
+    event.stopPropagation();
+})
 
-<body>
-    <div id="container">
-        <h1>To-Do List by 😎😎 PANKAJ<i class="fas fa-plus"></i></h1>
-        <input type="text" placeholder="Add New ToDo">
-        <ul>
-            <li> <span><i class="fas fa-trash"></i></span> Go to class</li>
-            <li> <span><i class="fas fa-trash"></i></span> Feed dog</li>
-            <li> <span><i class="fas fa-trash"></i></span> Study</li>
-        </ul>
-    </div>
-    <script src="http://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+$("input[type='text'").keypress(function(event){
+    if(event.which===13){
+        var todoText=$(this).val();
+        $(this).val("");
+        $("ul").append("<li><span><i class='fas fa-trash'></i> </span>" + todoText + "</li>");
+    }
+});
 
-    <script type="text/javascript" src="Assets/todos.js"></script>
-</body>
-
-</html>
+$(".fa-plus").click(function()
+{
+    $("input[type='text'").fadeToggle();
+})
