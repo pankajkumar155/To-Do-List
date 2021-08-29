@@ -1,48 +1,24 @@
-  
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.css">
-  <title>Todo List</title>
-</head>
-<body>
-
-  <div class="container">
-
-    <header class="text-center text-light my-4">
-      <h1 class="mb-4">Todo List 😎 by PANKAJ </h1>
-      <form class="search">
-        <input class="form-control m-auto" type="text" name="search" placeholder="search todos" />
-      </form>
-    </header>
-
-    <ul class="list-group todos mx-auto text-light">
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <span>Complete Assignment-6</span>
-        <i class="far fa-trash-alt delete"></i>
-      </li>
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <span>Class at 9:30 am</span>
-        <i class="far fa-trash-alt delete"></i>
-      </li>
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <span>watch movie</span>
-        <i class="far fa-trash-alt delete"></i>
-      </li>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="to do list.css">
+  </head>
+  <body>
+    <div class="header">
+      <h2 style="margin:5px">To Do List by 😎 PANKAJ</h2>
+      <input type="text" id="myInput" placeholder="Title...">
+      <span onclick="newElement()" class="addBtn">Add</span>
+    </div>
+    <ul id="myUL">
+      <li class="checked">Play Basketball</li>
+      <li>cook food</li>
+      <li>Finish Assignments</li>
+      <li class="checked">Attend classes</li>
+      <li>Watch a movie</li>
+      <li>Go for a walk</li>
+      <li>Talk to friends</li>
     </ul>
-
-    <form class="add text-center my-4">
-      <label class="text-light">Add a new todo...</label>
-      <input class="form-control m-auto" type="text" name="add" />
-    </form>
-
-  </div>
-  
-
-  <script src="app.js"></script>
-</body>
+    <button type="button" id="clear-list" onclick="removeAll()">Clear Items</button>
+    <script type="text/javascript" src="to do list.js"></script>
+  </body>
 </html>
