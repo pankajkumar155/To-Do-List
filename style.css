@@ -1,149 +1,181 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins";
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
-::selection {
-  color: #ffff;
-  background: rgb(61, 48, 204);
+
+
+
+body{
+   background-color:lightgreen;
+    font-family: 'Poppins', sans-serif;
 }
-body {
-  width: 100%;
-  height: 100vh;
-  padding: 10px;
-  background-image: url(https://i.ibb.co/rkBVw0H/Untitled-design-1.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  
-} 
-.wrapper {
-  background: #fff;
-  max-width: 400px;
-  width: 100%;
-  margin: 120px auto;
-  padding: 25px;
-  border-radius: 5px;
-  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+
+h1{
+    text-align: center;
+    margin-top: 5px;
 }
-.wrapper header {
-  font-size: 30px;
-  font-weight: 600;
-  text-align: center;
+
+.container{
+    margin-top: 30px;
+    padding: 10px;
+    border: 5px solid black; 
+    width: 90vw;
+    margin: 20px;
 }
-.wrapper .inputField {
-  margin: 20px 0;
-  width: 100%;
-  display: flex;
-  height: 45px;
-}
-.inputField input {
-  width: 85%;
-  height: 100%;
-  outline: none;
-  border-radius: 3px;
-  border: 1px solid #ccc;
-  font-size: 17px;
-  padding-left: 15px;
-  transition: all 0.3s ease;
-}
-.inputField input:focus {
-  border-color: rgb(15, 67, 255);
-}
-.inputField button {
+
+
+.input1{
+    width: 75vw;
+    height: 30px;
+    padding: 10px;
+    margin-top: 35px;
+    border: 5px solid rgb(201, 181, 241);
     
+}
+
+.btn{
+    width: 30vw;
+    height: 30px;
+   background-color:white;
+    margin-left: 25px;
+    margin-top: 40px;
+    margin-bottom: 80px;
+    border: 5px solid black;
+}
+
+
+.btn1{
+    width: 30vw;
+    height: 30px;
+    margin-left: 10px;
+    margin-top: 40px;
+    margin-bottom: 80px;
+    background-color: white;
+    border: 5px solid black;
+}
+
+
+
+.container ul{
+    list-style: none;
+    padding: 8px;
+    border: 3px solid black;
+}
+
+.container li{
+    color:cornflowerblue;
+    background-color:  khaki;
+    border: 1px solid rgb(100, 150, 100);
+    padding: 5px;
+}
+
+.container li a{
+    float: right;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#error{
+    color:red;
+    font-size: 14px;
+    
+}
+
+
+@media (min-width:768px){
+    body{
+        padding: 50px 90px;
+        
+       
+    }
+    
+    .container{
+        padding: 60px;
+        border: 5px solid #9abc9b;
+        width: 80vw;
+        margin-right: 20px;
+        
+    }
+    
+    .input1{
+        width: 40vw;
+        height: 30px;
+        padding: 20px;
+        font-size: large;
+        font-weight: 600;
+    }
+    
+    .btn{
+        width: 9vw;
+        height: 40px;
+        margin-left: 10px;
+    }
+    
+    
+    .btn1{
+        width: 8vw;
+        height: 40px;
+        margin-left: 10px;
+    }
+    
+
+.container ul{
+    list-style: none;
+    padding: 0px;
   
+}
+
+.container li{
+    color:cornflowerblue;
+   
+}
+}
+
+
+@media  screen and (min-width:1024px){
+
+    body{
+        padding: 50px 80px;
+      
+    }
+    
+    .container{
+        padding: 90px;
+        border: 5px solid #9abc9b;
+        width: 80vw;
+        margin: 20px;
+        
+    }
+    
+    .input1{
+        width: 40vw;
+        height: 30px;
+        padding: 10px;
+    }
+    
+    .btn{
+        width: 9vw;
+        height: 30px;
+        margin-left: 20px;
+    }
+    
+    
+    .btn1{
+        width: 8vw;
+        height: 30px;
+        margin-left: 10px;
+    }
+    
+
+.container ul{
+    list-style: none;
+    padding: 0px;
   
-  width: 50px;
-  height: 100%;
-  border: none;
-  color: #fff;
-  margin-left: 5px;
-  font-size: 21px;
-  outline: none;
-  background: rgb(25, 5, 255);
-  cursor: pointer;
-  border-radius: 3px;
-  /* opacity: 0.6; */
-  pointer-events: none;
-  transition: all 0.3s ease;
 }
-.inputField button:hover{
-    background: green;
+
+.container li{
+    color:cornflowerblue;
 }
-.footer{
-    font-size: 23px;
-    text-align: center;
-}
-.footer1{
-    text-align: center;
-}
-.footer1 button:hover {
-  background: rgb(255, 69, 69);
-}
-.inputField button.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-.wrapper .todoList {
-  max-height: 250px;
-  overflow-y: auto;
-}
-.todoList li {
-  position: relative;
-  list-style: none;
-  margin-bottom: 8px;
-  background: #f2f2f2;
-  border-radius: 3px;
-  padding: 10px 15px;
-  cursor: default;
-  overflow: hidden;
-  word-wrap: break-word;
-}
-.todoList li .icon {
-  position: absolute;
-  right: -45px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #e74c3c;
-  width: 45px;
-  text-align: center;
-  color: #fff;
-  padding: 10px 15px;
-  border-radius: 0 3px 3px 0;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-.todoList li:hover .icon {
-  right: 0px;
-}
-.wrapper .footer1 {
-  display: flex;
-  width: 100%;
-  margin-top: 20px;
-  align-items: center;
-  justify-content: space-between;
-}
-.footer1 button {
-  padding: 6px 10px;
-  border-radius: 3px;
-  width: 90px;
-  border: none;
-  outline: none;
-  color: #fff;
-  font-weight: 400;
-  font-size: 16px;
-  margin-left: 0px;
-  background: rgb(15, 67, 255);
-  cursor: pointer;
-  user-select: none;
-  opacity: 0.6;
-  pointer-events: none;
-  transition: all 0.3s ease;
-  margin-left: 130px;
-  margin-right: 130px;
-}
-.footer1 button.active {
-  opacity: 1;
-  pointer-events: auto;
-}
+}  
