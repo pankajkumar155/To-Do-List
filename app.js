@@ -1,25 +1,27 @@
-  
-$('form').on('click', 'input[type=submit]', function(e) {
-    e.preventDefault();
-    let task = $('input[type=text]').val();
 
-    if (task.length > 0) {
-        $('ul.task-list').append('<li><input type=checkbox><p>' + task + '</p><img src="close.png" alt="close"></li>');
-        $('input[type=text]').val('');
-    };
+const input = document.querySelector("#add");
+const  btn = document.querySelector("#btn");
+const list = document.querySelector("#list");
+var el = document.getElementsByTagName('li');
 
-    $('input[type=checkbox]').click(function(){
-        if ($(this).is(':checked')) {
-            $(this).parent('li').fadeTo(300, 0.4)
-        } else {
-            $(this).parent('li').fadeTo(300, 1);
-        }
-    });
-  
-    $(function (){
-        $('img').click(function(){
-            $(this).parent('li').fadeOut();
-        })
-        
-    });
-})
+// this function will allow us to add elements when we click the button
+btn.onclick = function(){
+    
+    var txt = input.value;
+    if(txt ==''){
+        alert('you must write something');
+    }else{
+        li = document.createElement('li');
+    li.innerHTML = txt;
+    list.insertBefore(li,list.childNodes[0]);
+    input.value = '';
+    }
+    
+};
+
+//this function will allow us to check the clicked elements
+list.onclick = function(ev){
+    if(ev.target.tagName == 'LI'){
+         ev.target.classList.toggle('checked');
+    }
+};
