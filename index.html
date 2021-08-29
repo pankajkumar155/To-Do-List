@@ -1,34 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-
-    <title>To-Do List</title>
-
+    <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="css.css">
+    <script src="jquery-3.6.0.min.js"></script>
 </head>
-
 <body>
-    <h1>To-Do List by 😎😎 PANKAJ </h1>
-    <div class="container">
-
-        <input type="text" id="name" class="input1">
-        <input type="button" value="Add" id="btnClick" class="btn" onclick="addMore()">
-        <input type="button" value="Clear All" id="btnClick1" class="btn1"><br>
-        <span id="error"></span>
-        <ul id="box"></ul>
-
-    </div>
-
-
+    <main>
+        <h1 class="first_title">Todo List by 😎😎 PANKAJ</h1>
+         <form class="myform" action="#" method="get">
+            <input type="text" name="add_task" placeholder="Add your task">
+            <input type="submit" value=" Add ">   
+        </form>
+        <ul class="task-list">   
+        </ul>
+    </main>
+    <script src="script.js"></script>
 </body>
-
 </html>
