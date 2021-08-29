@@ -1,24 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <link rel="stylesheet" type="text/css" href="to do list.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"    
+      /><link >
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"></link> 
   </head>
-  <body>
-    <div class="header">
-      <h2 style="margin:5px">To Do List by 😎 PANKAJ</h2>
-      <input type="text" id="myInput" placeholder="Title...">
-      <span onclick="newElement()" class="addBtn">Add</span>
+  <body >
+    <div class="wrapper">
+      <header>Todo List by 😎 PANKAJ</header>
+      <div class="inputField">
+        <input type="text" placeholder="Write your task"/>
+        <button><i class="fas fa-plus"></i></button>
+      </div>
+      <ul class="todoList"> 
+        <!-- data are comes from local storage -->
+      </ul>
+      <div class="footer">
+        <span>You have <span class="pendingTasks"></span> pending tasks</span>
+        
+      </div>
+      <div class="footer1"><button>Clear All</button></div>
+      
     </div>
-    <ul id="myUL">
-      <li class="checked">Play Basketball</li>
-      <li>cook food</li>
-      <li>Finish Assignments</li>
-      <li class="checked">Attend classes</li>
-      <li>Watch a movie</li>
-      <li>Go for a walk</li>
-      <li>Talk to friends</li>
-    </ul>
-    <button type="button" id="clear-list" onclick="removeAll()">Clear Items</button>
-    <script type="text/javascript" src="to do list.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
