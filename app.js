@@ -2,14 +2,13 @@ const inputBox = document.querySelector(".inputField input");
 const addBtn = document.querySelector(".inputField button");
 const todoList = document.querySelector(".todoList");
 const deleteAllBtn = document.querySelector(".footer1 button");
-// onkeyup event
 inputBox.onkeyup = () => {
   let userEnteredValue = inputBox.value; //getting user entered value
   if (userEnteredValue.trim() != 0) {
     
-    addBtn.classList.add("active"); //active the add button
+    addBtn.classList.add("active"); 
   } else {
-    addBtn.classList.remove("active"); //unactive the add button
+    addBtn.classList.remove("active"); 
   }
 };
 showTasks(); 
@@ -19,14 +18,14 @@ addBtn.onclick = () => {
   let getLocalStorageData = localStorage.getItem("New Todo"); 
   if (getLocalStorageData == null) {
     
-    listArray = []; //create a blank array
+    listArray = [];
   } else {
-    listArray = JSON.parse(getLocalStorageData); //transforming json string into a js object
+    listArray = JSON.parse(getLocalStorageData);
   }
-  listArray.push(userEnteredValue); //pushing or adding new value in array
-  localStorage.setItem("New Todo", JSON.stringify(listArray)); //transforming js object into a json string
+  listArray.push(userEnteredValue);
+  localStorage.setItem("New Todo", JSON.stringify(listArray));
   showTasks(); 
-  addBtn.classList.remove("active"); //unactive the add button once the task added
+  addBtn.classList.remove("active"); 
 };
 function showTasks() {
   let getLocalStorageData = localStorage.getItem("New Todo");
@@ -36,7 +35,7 @@ function showTasks() {
     listArray = JSON.parse(getLocalStorageData);
   }
   const pendingTasksNumb = document.querySelector(".pendingTasks");
-  pendingTasksNumb.textContent = listArray.length; //passing the array length in pendingtask
+  pendingTasksNumb.textContent = listArray.length; 
   if (listArray.length > 0) {
     //if array length is greater than 0
     deleteAllBtn.classList.add("active"); 
@@ -60,7 +59,7 @@ function deleteTask(index) {
 }
 
 deleteAllBtn.onclick = () => {
-  listArray = []; //empty the array
+  listArray = []; 
   localStorage.setItem("New Todo", JSON.stringify(listArray)); 
   showTasks(); 
 };
