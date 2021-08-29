@@ -1,73 +1,84 @@
-
-
-@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    outline: 0;
-}
 body{
-    background-color: #f5f5f5;
+    font-family: Roboto;
+    background: #02AAB0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #00CDAC, #02AAB0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #00CDAC, #02AAB0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
-.container{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    background-color: #fafafa;
-    box-shadow: 0 2px 8px rgba(0,0,0,.16);
-    width: 460px;
-    height: 680px;
-    text-align: center;
-    font-family: 'Nunito',sans-serif;
-   
-}
 h1{
-    margin: 12px 0;
+    background: #2980b9;
+    color: white;
+    margin:0;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size:24px;
+    font-weight: normal;
 }
-.add-elements{
-    margin: 12px 0;
-    
-}
-input{
-    padding: 6px 4px;
-    width: 70%;
-}
-button{
-    padding: 7px 14px;
-    background-color: #00b0ff;
-    border: none;
-    border-radius: 4px;
-    color: #fafafa;
 
-}
-.element-list{
-    height: 550px;
-    overflow-y: scroll
-}
 ul{
-    padding: 15px;
-   
-}
-li{
     list-style: none;
-    padding: 10px 5px;
-    background-color: #fff;
-    margin: 12px 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,.16);
-    border-radius: 3px;
-    transition: .4s;
+    margin:0;
+    padding:0;
 }
-button:hover{
-    background-color: #1565c0;
+ 
+li{
+    background: #fff;
+    height:40px;
+    line-height: 40px;
+    color:#666;
+}
+      
+span{
+    background: #e74c3c;
+    height: 40px;
+    margin-right: 20px;
+    text-align: center;
+    color:white;
+    width:0px;
+    display: inline-block;
+    opacity: 0;
 }
 
-li:hover{
-    background-color: #e0e0e0;
+input{
+    font-size: 18px;
+    background: #f7f7f7;
+    width:100%;
+    padding:13px 13px 13px 20px;
+    color: #2980b9;
+    box-sizing: border-box;    /*width and height includes the padding and the border but not the margin*/
+    border:3px solid rgba(0, 0, 0, 0);
 }
 
-.checked{
-    text-decoration: line-through;
-    background-color: #e0e0e0;
+.fa-plus{
+    float: right;
+} 
+
+li:hover span{
+    width:40px;
+    transition: 0.2s linear;
+    opacity: 1.0;
 }
+
+input:focus{
+    background: white;
+    border: 3px solid #2980b9;
+    outline: none;
+}
+
+li:nth-child(2n){
+    background: #f7f7f7;
+}
+
+#container{
+    width: 360px;
+    margin:100px auto;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+    background: #f7f7f7;
+}
+
+.completed{
+    color : gray;  
+    text-decoration: line-through;  
+}
+        
