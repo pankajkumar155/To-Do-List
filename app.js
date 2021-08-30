@@ -1,34 +1,38 @@
-var addButton = document.getElementById('add');
-var toDos = document.getElementById('todos');
-var inputfield = document.getElementById('inputsth');
+const listContainer = document.querySelector(".list-container");
+const list = document.querySelector(".list");
+const inputListText = document.getElementById("list-text");
+const buttonNew = document.getElementById("list-button_new");
+const buttonRemove = document.getElementById("list-button_remove");
 
 
-addButton.addEventListener('click',function(){
-    var paragraph = document.createElement('p');
-    paragraph.innerText = inputfield.value;
-    toDos.appendChild(paragraph);
-    paragraph.style.fontWeight = "bold";
-    inputfield.value = "";
-
-    paragraph.addEventListener('click',function(){
-        paragraph.style.textDecoration = "line-through";
-        paragraph.style.cursor = "pointer";
-        paragraph.style.color = "rgba(44,41,41,0.7)";
-
-    })
-    paragraph.addEventListener('dblclick',function(){
-        paragraph.style.display = "none";
-  
-});
-    });
-   
-    var icon = document.getElementById("icon");
-    icon.onclick = function(){
-        document.body.classList.toggle("dark-theme");
-        if(document.body.classList.contains("dark-theme")){
-            icon.src = "dark theme icon/sun.png";
-        }else{
-            icon.src = "dark theme icon/moon.png";   
-        }
+window.addEventListener("keypress", (e) => {
+    if (e.key === 'Enter') {
+    let tarea = inputListText.value
+    let li = document.createElement("LI");
+    li.textContent = tarea
+    li.classList = "li"
+    if (tarea !== "") {
+        list.appendChild(li)
+        inputListText.value = ""
+    } else {
+        alert("No hay texto")
     }
-    
+}})
+
+buttonNew.addEventListener("click", () => {
+    let tarea = inputListText.value
+    let li = document.createElement("LI");
+    li.textContent = tarea
+    li.classList = "li"
+    if (tarea !== "") {
+        list.appendChild(li)
+        inputListText.value = ""
+    } else {
+        alert("No hay texto")
+    }
+})
+
+buttonRemove.addEventListener("click", () => {
+    let li = document.querySelector(".li")
+    list.removeChild(li)
+})
