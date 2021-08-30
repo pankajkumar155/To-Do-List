@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-	<link rel="stylesheet" href="style.css">
-
+<head>		
+	<link rel="stylesheet" href="main.css">
 </head>
 <body>
-<div class="container">
-<h1>ToDo List😎Pankaj</h1>
-<form>
-	<input type="text" name="newItem" id="item" placeholder="Add an item to the list" />
-	<button id="btn">Add item</button>
-</form>
-<ul id="list">
-	
-</ul>
-</div>
-<script src="script.js"></script>
+	<div id="myDIV" class="header">
+		<h2>To Do List 😎😎 PANKAJ</h2>
+		<input type="text" id="myInput" placeholder="What Do You Need To Do....?">
+		<span onclick="newElement()" class="addBtn">Add</span>
+	  </div>
+	  
+	  <ul id="myUL">
+		<li>Hit the gym</li>
+		<li class="checked">Pay bills</li>
+		<li>Meet my friends</li>
+		<li>Visit Chitkara University</li>
+		<li class="checked">Read a book</li>
+		<li>Play basketball</li>
+	  </ul>
+	  <script src='main.js' ></script>
 </body>
 </html>
