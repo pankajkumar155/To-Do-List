@@ -1,49 +1,34 @@
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
+var addButton = document.getElementById('add');
+var toDos = document.getElementById('todos');
+var inputfield = document.getElementById('inputsth');
 
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  }
-}
-var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
-function newElement() {
-  var li = document.createElement("li");
-  var inputValue = document.getElementById("myInput").value;
-  var t = document.createTextNode(inputValue);
-  li.appendChild(t);
-  if (inputValue === '') {
-    alert("You must write something!");
-  } else {
-    document.getElementById("myUL").appendChild(li);
-  }
-  document.getElementById("myInput").value = "";
 
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
+addButton.addEventListener('click',function(){
+    var paragraph = document.createElement('p');
+    paragraph.innerText = inputfield.value;
+    toDos.appendChild(paragraph);
+    paragraph.style.fontWeight = "bold";
+    inputfield.value = "";
 
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
+    paragraph.addEventListener('click',function(){
+        paragraph.style.textDecoration = "line-through";
+        paragraph.style.cursor = "pointer";
+        paragraph.style.color = "rgba(44,41,41,0.7)";
+
+    })
+    paragraph.addEventListener('dblclick',function(){
+        paragraph.style.display = "none";
+  
+});
+    });
+   
+    var icon = document.getElementById("icon");
+    icon.onclick = function(){
+        document.body.classList.toggle("dark-theme");
+        if(document.body.classList.contains("dark-theme")){
+            icon.src = "dark theme icon/sun.png";
+        }else{
+            icon.src = "dark theme icon/moon.png";   
+        }
     }
-  }
-}
+    
