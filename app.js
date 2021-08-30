@@ -1,38 +1,25 @@
-const listContainer = document.querySelector(".list-container");
-const list = document.querySelector(".list");
-const inputListText = document.getElementById("list-text");
-const buttonNew = document.getElementById("list-button_new");
-const buttonRemove = document.getElementById("list-button_remove");
+var list = document.querySelector('#list'),
+    item = document.querySelector('#item');
 
-
-window.addEventListener("keypress", (e) => {
-    if (e.key === 'Enter') {
-    let tarea = inputListText.value
-    let li = document.createElement("LI");
-    li.textContent = tarea
-    li.classList = "li"
-    if (tarea !== "") {
-        list.appendChild(li)
-        inputListText.value = ""
-    } else {
-        alert("No hay texto")
+document.querySelector('#btn').addEventListener('click', function(ev){
+	var text = item.value;
+	if(text !== ''){
+	list.innerHTML += '<li class="toDoItems" onclick="remove()">  '+text+ ' </li>';
+	item.value = '';
     }
-}})
+	ev.preventDefault();
 
-buttonNew.addEventListener("click", () => {
-    let tarea = inputListText.value
-    let li = document.createElement("LI");
-    li.textContent = tarea
-    li.classList = "li"
-    if (tarea !== "") {
-        list.appendChild(li)
-        inputListText.value = ""
-    } else {
-        alert("No hay texto")
-    }
-})
+}, false);	
 
-buttonRemove.addEventListener("click", () => {
-    let li = document.querySelector(".li")
-    list.removeChild(li)
-})
+
+function remove(){
+	var listItems = document.getElementsByTagName("li");
+	for(var i = 0; i < listItems.length; i++){
+		listItems[i].onclick = function(){
+			this.parentNode.removeChild(this);
+		}
+	}
+
+	
+}
+
